@@ -113,21 +113,20 @@ Lido pelo `/setup` pra reconhecer a pessoa, pré-carregar função e criar estru
 ### Luan
 - **Apelidos / variações:** Luan, Operacional
 - **Função:** Operacional
-- **Contexto atual:** High Ticket + Spy de ofertas (busca ofertas black pra mandar pra Helen — produto principal)
-- **Pergunta de contexto:** "Luan — você ainda cuida da parte de espionagem / Spy, ou tá full no High Ticket agora?"
-- **Pergunta extra (High Ticket):** "Quais concorrentes você tá analisando no High Ticket agora? Me passa os nomes que eu já crio as pastas."
-- **Pergunta extra (Spy):** "E pro Spy de ofertas — tem produtos ou nichos específicos que você monitora agora?"
+- **Contexto atual:** Assumiu o High Ticket que a Helen tocava. Faz análise de concorrentes do segmento high ticket + Spy de ofertas black pro produto principal (Swipe Offers).
+- **Pergunta de contexto:** "Luan — quais concorrentes você tá analisando no High Ticket agora? Você ainda tá na S4? Me passa os nomes que eu já crio uma pasta pra cada."
+- **Pergunta extra (Spy):** "E pro Spy de ofertas — você quer criar alguma pasta específica pra se organizar? Pode ser por nicho, plataforma ou tipo de oferta. Se preferir deixar tudo junto por enquanto, tudo bem também."
 - **Estrutura de pastas:**
   ```
   high-ticket/
-    [uma pasta por concorrente respondido na pergunta extra]
+    [uma pasta por concorrente informado, ex: s4/, concorrente-x/]
     referencias/
     scripts/
   spy/
     ofertas-black/
-    [uma pasta por nicho/produto informado, se houver]
+    [pastas adicionais se o Luan quiser organizar por nicho/plataforma]
   ```
-- **Nota:** As pastas de concorrentes e nichos são criadas dinamicamente com os nomes que o Luan informar. Se não informar nenhum, criar `high-ticket/concorrente-1/` como placeholder.
+- **Nota:** Criar as pastas de concorrentes com os nomes exatos que o Luan informar (minúsculo, espaço → hífen). Se não informar nenhum, criar `high-ticket/concorrente-1/` como placeholder. Pra spy, só criar subpastas extras se ele pedir — senão deixar só `ofertas-black/`.
 
 ---
 
