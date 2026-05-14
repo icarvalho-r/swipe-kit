@@ -67,21 +67,21 @@ Listar as opções de forma natural:
 
 ### Passo 3 — Pergunta de contexto
 
-Pedir o foco atual com uma pergunta específica, não genérica.
-
-Se a função for conhecida, contextualizar:
-
-- **Operacional (Luan):** "Luan — você ainda cuida da parte de espionagem / Spy, ou tá full no High Ticket agora?"
-- **CRM (Thais):** "Tá focada no dunning ainda ou entrou coisa nova?"
-- **Pesquisa/Social (Bruna):** "Conteúdo, pesquisa de ICP ou os dois?"
-- **Onboarding (Henrique T):** "O onboarding tá em implementação ou ainda em refinamento?"
-- **Vendas/CS (Luanna):** "Tá no CS proativo ou tem campanha nova rodando?"
-- **Dados (Guibson):** "Instrumentação ainda ou já entrou análise de cohort?"
-- **Sócio/CEO:** "Qual a prioridade que tá consumindo mais energia agora?"
-- **Head de Ops (Isabella):** "Qual frente tá mais quente essa semana?"
-- **Função desconhecida:** "Qual é o seu foco principal agora?"
+Usar o campo **"Pergunta de contexto"** do `templates/time/pessoas.md` pra essa pessoa. Se não tiver, perguntar: "Qual é o seu foco principal essa semana?"
 
 Aguardar a resposta.
+
+### Passo 3b — Perguntas extras (se houver)
+
+Se a pessoa tiver campo **"Pergunta extra"** no `pessoas.md`, fazer essas perguntas em sequência.
+
+Exemplo pra Luan:
+1. "Quais concorrentes você tá analisando no High Ticket agora? Me passa os nomes que eu já crio as pastas."
+2. "E pro Spy do produto principal — tem concorrentes específicos que você acompanha?"
+
+Guardar as respostas pra usar na criação de pastas no Passo 5.
+
+Aguardar as respostas.
 
 ---
 
@@ -96,6 +96,8 @@ Se disser "tudo bem" ou não tiver preferência específica: manter `_contexto/p
 ## Processamento — gerar os arquivos
 
 ### 1. Preencher `_contexto/estrategia.md`
+
+Incluir também os concorrentes ou projetos que a pessoa mencionou nas perguntas extras, se houver.
 
 ```markdown
 # Foco Atual — [Nome]
@@ -113,7 +115,29 @@ Se disser "tudo bem" ou não tiver preferência específica: manter `_contexto/p
 *Atualize esse arquivo quando seu foco mudar.*
 ```
 
-### 2. Copiar skills da função pra `.claude/commands/`
+### 2. Criar estrutura de pastas
+
+Ler o campo **"Estrutura de pastas"** da pessoa em `templates/time/pessoas.md` e criar as pastas listadas.
+
+Para pastas dinâmicas (como os concorrentes do Luan):
+- Usar os nomes informados nas perguntas extras pra criar subpastas dentro da pasta pai
+- Normalizar os nomes: minúsculo, espaço → hífen (ex: "Hotmart Club" → `hotmart-club`)
+- Se a pessoa não informou nenhum nome, criar `concorrente-1/` como placeholder
+
+Exemplo para Luan (se ele informou "Hotmart Club" e "Mentoria Pay"):
+```
+high-ticket/
+  hotmart-club/
+  mentoria-pay/
+  referencias/
+  scripts/
+spy/
+  analises/
+```
+
+Criar também um `README.md` mínimo dentro de cada pasta principal explicando o que vai lá.
+
+### 3. Copiar skills da função pra `.claude/commands/`
 
 Ler `templates/funcoes/mapa.md` e copiar as skills da função:
 
@@ -124,7 +148,7 @@ Ler `templates/funcoes/mapa.md` e copiar as skills da função:
 Skills comuns (já estão em `.claude/commands/`, não precisa copiar):
 - `/iniciar`, `/syncar`, `/atualizar`, `/setup`
 
-### 3. Atualizar `_contexto/preferencias.md` (só se a pessoa pediu algo diferente)
+### 4. Atualizar `_contexto/preferencias.md` (só se a pessoa pediu algo diferente)
 
 Se respondeu algo na pergunta opcional que diverge do padrão: adicionar seção `## Preferências pessoais` no final.
 Se não pediu nada: não tocar no arquivo.
@@ -140,6 +164,9 @@ Como [função], você tem:
 - /iniciar — carrega contexto da Swipe e do teu foco no começo da sessão
 - /syncar — salva no GitHub
 [lista das skills específicas copiadas]
+
+Pastas criadas:
+[lista das pastas criadas, incluindo as de concorrentes se houver]
 
 Como usar: chama qualquer skill com / (ex: /email-profissional, /hook-battery).
 Roda /iniciar no começo de cada nova conversa.
