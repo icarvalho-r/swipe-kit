@@ -48,10 +48,11 @@ Ler `templates/time/pessoas.md` e tentar identificar a pessoa pelo nome ou apeli
 Confirmar diretamente com tom casual — sem perguntar de novo:
 
 > "Luan — você é o Operacional né. Sei que você tá tocando o High Ticket agora.
-> Qual é o seu foco principal nos próximos 30 dias?"
+> Qual é o seu foco principal na próxima semana?"
 
 Adaptar a fala ao contexto da pessoa conforme o `templates/time/pessoas.md`:
-- Mencionar o projeto ativo mais relevante pra função dela (ex: para Thais → dunning; para Bruna → conteúdo/ICP; para Luanna → CS Proativo)
+- Se a pessoa tem um campo **"Pergunta de contexto"** definido, usar exatamente aquela pergunta
+- Caso contrário, mencionar o projeto ativo mais relevante pra função e perguntar sobre o foco atual
 - Tom: conversa entre colegas, não onboarding corporativo
 
 **Se não reconheceu (nome desconhecido):**
@@ -70,7 +71,7 @@ Pedir o foco atual com uma pergunta específica, não genérica.
 
 Se a função for conhecida, contextualizar:
 
-- **Operacional (Luan):** "Tá no High Ticket ou tem outra coisa na frente agora?"
+- **Operacional (Luan):** "Luan — você ainda cuida da parte de espionagem / Spy, ou tá full no High Ticket agora?"
 - **CRM (Thais):** "Tá focada no dunning ainda ou entrou coisa nova?"
 - **Pesquisa/Social (Bruna):** "Conteúdo, pesquisa de ICP ou os dois?"
 - **Onboarding (Henrique T):** "O onboarding tá em implementação ou ainda em refinamento?"

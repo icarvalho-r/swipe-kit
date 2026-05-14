@@ -44,7 +44,9 @@ Lido pelo `/setup` pra reconhecer a pessoa pelo nome e pré-carregar função + 
 ### Luan
 - **Apelidos / variações:** Luan, Operacional
 - **Função:** Operacional
-- **Contexto atual:** High Ticket (Debrief Done-for-You, R$6k/mês) + espionagem de concorrentes (boards Miro)
+- **Contexto atual:** High Ticket (Debrief Done-for-You, R$6k/mês)
+- **Área principal:** Espionagem de concorrentes (boards Miro) — perguntar se ainda cuida do Spy ou se mudou
+- **Pergunta de contexto:** "Luan — você ainda cuida da parte de espionagem / Spy, ou tá full no High Ticket agora?"
 
 ### Luanna
 - **Apelidos / variações:** Luanna, Lu, Vendas, CS
