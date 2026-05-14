@@ -113,8 +113,8 @@ Lido pelo `/setup` pra reconhecer a pessoa, pré-carregar função e criar estru
 ### Luan
 - **Apelidos / variações:** Luan, Operacional
 - **Função:** Operacional
-- **Contexto atual:** Assumiu o High Ticket que a Helen tocava. Faz análise de concorrentes do segmento high ticket + Spy de ofertas black pro produto principal (Swipe Offers).
-- **Concorrentes conhecidos (High Ticket):** Jeremy, Bluehackers, Full Sales System, Thiago Reis
+- **Contexto atual:** Assumiu o High Ticket que a Helen tocava. Analisa concorrentes pra S4 (cliente teste) pra construir o processo do High Ticket da Swipe. Também faz Spy de ofertas black pro produto principal.
+- **Concorrentes analisados pra S4:** Jeremy, Bluehackers, Full Sales System, Thiago Reis
 - **Estrutura de pastas:**
   ```
   high-ticket/

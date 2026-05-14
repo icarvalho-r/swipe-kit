@@ -9,7 +9,7 @@ SaaS de inteligência competitiva para profissionais de marketing digital brasil
 ## Produtos
 
 - **Swipe Offers (plataforma):** R$97/mês
-- **Swipe + SPY (plataforma + extensão Chrome):** R$147/mês
+- **Swipe + SPY (plataforma + extensão Chrome):** R$147/mês — extensão é uma biblioteca de anúncios
 - **Plano Gratuito:** entrada/trial
 - **Debrief Done-for-You:** R$6.000/mês — desenhado, não lançado
 
