@@ -13,13 +13,13 @@ Cada pessoa clona o repositório, roda `/setup`, responde a função no time e o
 Com o Claude Code aberto em qualquer pasta, copie e cole:
 
 ```
-Instala pra mim o repositório https://github.com/dobralabs/swipe-kit.git na pasta atual, abre ela e roda /setup
+Instala pra mim o repositório https://github.com/icarvalho-r/swipe-kit.git na pasta atual, abre ela e roda /setup
 ```
 
 ### Opção 2 — Via terminal
 
 ```bash
-git clone https://github.com/dobralabs/swipe-kit.git
+git clone https://github.com/icarvalho-r/swipe-kit.git
 cd swipe-kit
 code .
 ```
