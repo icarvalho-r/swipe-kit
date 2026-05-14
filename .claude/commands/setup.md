@@ -120,6 +120,10 @@ Aguardar. Se quiser um prompt específico, montar e mandar pronto pra copiar e c
 
 Se sim, ler `_contexto/empresa.md` e montar um resumo enxuto focado no que é relevante pro papel do Luan.
 
+**10.** Fechar:
+
+> "Boa, Luan. Se tiver qualquer dúvida, pode me mandar, ou chamar a Isa."
+
 ---
 
 ### Outras pessoas reconhecidas (fluxo padrão com contexto)
