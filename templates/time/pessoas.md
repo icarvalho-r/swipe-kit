@@ -113,10 +113,10 @@ Lido pelo `/setup` pra reconhecer a pessoa, pré-carregar função e criar estru
 ### Luan
 - **Apelidos / variações:** Luan, Operacional
 - **Função:** Operacional
-- **Contexto atual:** High Ticket (Debrief Done-for-You, R$6k/mês) + espionagem de concorrentes pra produto principal
+- **Contexto atual:** High Ticket + Spy de ofertas (busca ofertas black pra mandar pra Helen — produto principal)
 - **Pergunta de contexto:** "Luan — você ainda cuida da parte de espionagem / Spy, ou tá full no High Ticket agora?"
 - **Pergunta extra (High Ticket):** "Quais concorrentes você tá analisando no High Ticket agora? Me passa os nomes que eu já crio as pastas."
-- **Pergunta extra (Spy):** "E pro Spy do produto principal — tem concorrentes específicos que você acompanha?"
+- **Pergunta extra (Spy):** "E pro Spy de ofertas — tem produtos ou nichos específicos que você monitora agora?"
 - **Estrutura de pastas:**
   ```
   high-ticket/
@@ -124,10 +124,10 @@ Lido pelo `/setup` pra reconhecer a pessoa, pré-carregar função e criar estru
     referencias/
     scripts/
   spy/
-    [uma pasta por concorrente do produto principal, se informado]
-    analises/
+    ofertas-black/
+    [uma pasta por nicho/produto informado, se houver]
   ```
-- **Nota:** As pastas de concorrentes são criadas dinamicamente com o nome que o Luan informar. Se não informar nenhum, criar `high-ticket/concorrente-1/` como placeholder.
+- **Nota:** As pastas de concorrentes e nichos são criadas dinamicamente com os nomes que o Luan informar. Se não informar nenhum, criar `high-ticket/concorrente-1/` como placeholder.
 
 ---
 
