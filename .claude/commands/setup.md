@@ -83,7 +83,13 @@ Aguardar. Se ele contextualizar o processo, registrar em `_contexto/estrategia.m
 
 **6.** Preencher `_contexto/estrategia.md` com tudo que foi dito.
 
-**7.** Encerrar e oferecer próximos passos:
+**7.** Oferecer resumo de skills e pastas:
+
+> "Quer um resumo das skills disponíveis e das pastas que eu criei?"
+
+Se sim: listar as pastas criadas e os comandos copiados pra `.claude/commands/` (ex: /email-profissional, /roteiro-post, /copy-decoder...).
+
+**8.** Encerrar e oferecer próximos passos:
 
 > "Pronto. Abre uma nova conversa e digita /iniciar, eu já carrego teu contexto lá.
 >
@@ -98,7 +104,7 @@ Aguardar. Se ele contextualizar o processo, registrar em `_contexto/estrategia.m
 
 Aguardar. Se quiser um prompt específico, montar e mandar pronto pra copiar e colar na nova conversa.
 
-**8.** Oferecer contexto da Swipe:
+**9.** Oferecer contexto da Swipe:
 
 > "Quer que eu te passe um resumo sobre a Swipe ou sobre o High Ticket? O que é o produto, onde você entra, o que tá sendo construído."
 
