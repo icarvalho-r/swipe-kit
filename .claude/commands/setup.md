@@ -92,11 +92,11 @@ Se sim: mostrar em três blocos:
 **Bloco 1 — Pastas do workspace:**
 Listar todas as pastas criadas no workspace (incluindo as de concorrentes dentro de high-ticket/, spy/, e qualquer outra gerada pelo setup).
 
-**Bloco 2 — Skills ativas** (prontas pra usar com `/`):
-Listar tudo em `.claude/commands/` exceto setup, iniciar, syncar, atualizar.
+**Bloco 2 — Skills ativas:**
+Listar as skills em `.claude/commands/` (exceto setup, iniciar, syncar, atualizar) com uma linha descrevendo o que cada uma faz. Não listar os atalhos.
 
 **Bloco 3 — Catálogo completo** (disponíveis em `templates/skills/` e `templates/skills/rmbc/`, instalar quando precisar):
-Listar o que ainda não foi copiado pra commands. Finalizar com:
+Listar o que ainda não foi copiado pra commands, também com uma linha por skill descrevendo o que faz. Finalizar com:
 > "Pra ativar qualquer uma, fala o nome que eu copio pra você."
 
 **8.** Encerrar e oferecer próximos passos:
