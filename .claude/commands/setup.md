@@ -83,19 +83,26 @@ Aguardar. Se ele contextualizar o processo, registrar em `_contexto/estrategia.m
 
 **6.** Preencher `_contexto/estrategia.md` com tudo que foi dito.
 
-**7.** Encerrar e abrir pra uso:
+**7.** Encerrar e oferecer próximos passos:
 
-> "Pronto. /iniciar que eu já carrego seu contexto numa nova conversa.
+> "Pronto. Abre uma nova conversa e digita /iniciar — eu já carrego teu contexto lá.
 >
-> Tem alguma coisa que você quer contextualizar melhor do que você faz ou tá fazendo agora? Por exemplo: analisar uma VSL ou página de concorrente, montar um board no Miro, criar uma análise de oferta, comparar criativos. Posso te mostrar como funciona passo a passo."
+> Caso queira, posso te mandar agora um prompt pra você jogar na nova conversa pra começar com alguma coisa específica. Por exemplo:
+> - Analisar uma VSL ou página de concorrente
+> - Montar um board no Miro com o que você já tem
+> - Criar uma análise de oferta a partir de um link ou print
+> - Comparar criativos de dois concorrentes
+> - Conectar com o Obsidian e registrar um mapeamento
+>
+> Quer que eu monte um desses pra você?"
 
-Aguardar. Se ele quiser explorar alguma dessas opções, demonstrar.
+Aguardar. Se quiser um prompt específico, montar e mandar pronto pra copiar e colar na nova conversa.
 
-**8.** Oferecer contexto da Swipe (opcional, só se ele perguntar ou demonstrar interesse):
+**8.** Oferecer contexto da Swipe:
 
-> "Quer que eu te passe um resumo do contexto do High Ticket da Swipe? O que tá sendo construído, qual o objetivo, onde você entra nisso."
+> "Quer que eu te passe um resumo sobre a Swipe ou sobre o High Ticket? O que é o produto, onde você entra, o que tá sendo construído."
 
-Se sim, ler `_contexto/empresa.md` e resumir o que é relevante pro papel do Luan no High Ticket.
+Se sim, ler `_contexto/empresa.md` e montar um resumo enxuto focado no que é relevante pro papel do Luan.
 
 ---
 
