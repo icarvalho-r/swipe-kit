@@ -85,7 +85,7 @@ Aguardar. Se ele contextualizar o processo, registrar em `_contexto/estrategia.m
 
 **7.** Encerrar e oferecer próximos passos:
 
-> "Pronto. Abre uma nova conversa e digita /iniciar — eu já carrego teu contexto lá.
+> "Pronto. Abre uma nova conversa e digita /iniciar, eu já carrego teu contexto lá.
 >
 > Caso queira, posso te mandar agora um prompt pra você jogar na nova conversa pra começar com alguma coisa específica. Por exemplo:
 > - Analisar uma VSL ou página de concorrente
