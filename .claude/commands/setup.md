@@ -1,8 +1,8 @@
 ---
 name: setup
 description: >
-  Configura o Swipe Kit pra função da pessoa no time. Reconhece a pessoa pelo nome,
-  confirma função, pergunta sobre o contexto atual e copia as skills certas.
+  Configura o Swipe Kit pra função da pessoa no time. Reconhece pelo nome,
+  cria a estrutura de pastas e faz um onboarding leve e conversacional.
   Usar quando rodar /setup pela primeira vez.
 ---
 
@@ -13,10 +13,10 @@ description: >
 Antes de qualquer mensagem, ler:
 
 1. `_contexto/empresa.md` — o que é a Swipe, produtos, time, projetos ativos
-2. `templates/time/pessoas.md` — quem é quem no time, apelidos, função e contexto atual de cada pessoa
-3. `templates/funcoes/mapa.md` — quais skills correspondem a cada função
+2. `templates/time/pessoas.md` — quem é quem, apelidos, função, concorrentes conhecidos, estrutura de pastas
+3. `templates/funcoes/mapa.md` — skills por função
 
-Com isso carregado, o Claude já sabe: o que é o High Ticket, quem é o Luan, o que a Thais faz, o que tá ativo em cada frente. Usar esse contexto naturalmente nas perguntas — sem precisar explicar o que é a Swipe pra pessoa.
+Com isso em mãos, o Claude já sabe quem é o Luan, o que é o High Ticket, quais concorrentes ele analisa, o que é o Spy de ofertas.
 
 ---
 
@@ -24,162 +24,130 @@ Com isso carregado, o Claude já sabe: o que é o High Ticket, quem é o Luan, o
 
 Checar se `_contexto/estrategia.md` já tem conteúdo real (sem `<!-- NOT CONFIGURED -->`).
 
-- Se **já tem conteúdo personalizado**: avisar que o setup já foi feito e perguntar se quer refazer.
-- Se **não tem ou está vazio**: rodar o onboarding abaixo.
+- Se **já tem**: avisar que o setup já foi feito e perguntar se quer refazer.
+- Se **não tem**: rodar o onboarding abaixo.
 
 ---
 
-## Onboarding
-
-### Passo 1 — Pedir o nome
+## Passo 1 — Pedir o nome
 
 > "Oi. Qual é o seu nome?"
 
-Aguardar a resposta.
+Aguardar resposta.
 
 ---
 
-### Passo 2 — Reconhecer a pessoa
+## Passo 2 — Reconhecer ou não a pessoa
 
-Ler `templates/time/pessoas.md` e tentar identificar a pessoa pelo nome ou apelido informado.
+Buscar o nome em `templates/time/pessoas.md` (nome e apelidos).
 
-**Se reconheceu:**
-
-Verificar se a pessoa tem **"Fluxo do setup"** definido em `templates/time/pessoas.md`. Se tiver, seguir aquele fluxo — ele tem instruções específicas de tom, ordem e o que criar antes de falar.
-
-Se não tiver fluxo específico: criar as pastas da estrutura, mostrar o que foi criado e perguntar o foco da semana de forma casual.
-
-**Exemplo para Luan** (tem fluxo definido — criar tudo primeiro, mostrar depois):
-> "Luan. Organizei aqui o teu workspace — criei as pastas do High Ticket pra Jeremy, Bluehackers, Full Sales System e Thiago Reis, mais referências e scripts. E no Spy já tem a pasta de ofertas-black. Quer mudar alguma coisa ou tá bom assim?"
-
-Tom: colega mostrando o setup pronto, não assistente pedindo permissão. Nada de "posso criar?", "deseja que eu?", "gostaria de?"
-
-**Se não reconheceu (nome desconhecido):**
-
-> "[Nome] — qual é a sua função na Swipe?"
-
-Listar as opções de forma natural:
-
-> "Pode ser: Sócio, CEO, CRM, Dados, Onboarding, Pesquisa/Social, Operacional, Vendas/CS ou Head de Ops."
+### Se reconheceu → seguir o fluxo específico da pessoa (abaixo)
+### Se não reconheceu → fluxo genérico (no final desse arquivo)
 
 ---
 
-### Passo 3 — Pergunta de contexto
+## Fluxos específicos por pessoa
 
-Usar o campo **"Pergunta de contexto"** do `templates/time/pessoas.md` pra essa pessoa. Se não tiver, perguntar: "Qual é o seu foco principal essa semana?"
+### Luan
 
-Aguardar a resposta.
+**1.** Responder de forma casual, já sinalizando que vai criar as pastas:
 
-### Passo 3b — Perguntas extras (se houver)
+> "Ah, Luan — você tá tocando o High Ticket né. Deixa eu criar as pastas pra você."
 
-Se a pessoa tiver campo **"Pergunta extra"** no `pessoas.md`, fazer essas perguntas em sequência.
-
-Exemplo pra Luan:
-1. "Quais concorrentes você tá analisando no High Ticket agora? Me passa os nomes que eu já crio as pastas."
-2. "E pro Spy do produto principal — tem concorrentes específicos que você acompanha?"
-
-Guardar as respostas pra usar na criação de pastas no Passo 5.
-
-Aguardar as respostas.
-
----
-
-### Passo 4 (opcional) — Preferências
-
-> "Tem alguma preferência de tom ou coisa que te incomoda em texto de IA? Se não tiver, sigo o padrão da Swipe."
-
-Se disser "tudo bem" ou não tiver preferência específica: manter `_contexto/preferencias.md` como está, sem modificar.
-
----
-
-## Processamento — gerar os arquivos
-
-### 1. Preencher `_contexto/estrategia.md`
-
-Incluir também os concorrentes ou projetos que a pessoa mencionou nas perguntas extras, se houver.
-
-```markdown
-# Foco Atual — [Nome]
-
-## Função na Swipe
-[Função]
-
-## Foco principal agora
-[Resposta da pergunta de contexto]
-
-## O que pode esperar
-[Inferir do contexto e função — ex: "Tarefas relacionadas a high ticket, espionagem e operação"]
-
----
-*Atualize esse arquivo quando seu foco mudar.*
-```
-
-### 2. Criar estrutura de pastas
-
-Ler o campo **"Estrutura de pastas"** da pessoa em `templates/time/pessoas.md` e criar as pastas listadas.
-
-Para pastas dinâmicas (como os concorrentes do Luan):
-- Usar os nomes informados nas perguntas extras pra criar subpastas dentro da pasta pai
-- Normalizar os nomes: minúsculo, espaço → hífen (ex: "Hotmart Club" → `hotmart-club`)
-- Se a pessoa não informou nenhum nome, criar `concorrente-1/` como placeholder
-
-Exemplo para Luan (se ele informou "Hotmart Club" e "Mentoria Pay"):
+**2.** Criar silenciosamente toda a estrutura:
 ```
 high-ticket/
-  hotmart-club/
-  mentoria-pay/
+  jeremy/
+  bluehackers/
+  full-sales-system/
+  thiago-reis/
   referencias/
   scripts/
 spy/
-  analises/
+  ofertas-black/
 ```
 
-Criar também um `README.md` mínimo dentro de cada pasta principal explicando o que vai lá.
+**3.** Mostrar o que foi criado e abrir pra ajuste:
 
-### 3. Copiar skills da função pra `.claude/commands/`
+> "Criei as pastas do High Ticket: Jeremy, Bluehackers, Full Sales System e Thiago Reis — mais referências e scripts. Tem alguma coisa que você quer mudar?"
 
-Ler `templates/funcoes/mapa.md` e copiar as skills da função:
+Aguardar. Ajustar se ele pedir (adicionar/renomear/remover pasta).
 
-- Skills de arquivo `.md` → copiar `templates/skills/<skill>.md` pra `.claude/commands/<skill>.md`
-- Skills de pasta → copiar `templates/skills/<skill>/` pra `.claude/commands/<skill>/`
-- Skills RMBC `(rmbc)` → copiar `templates/skills/rmbc/<skill>/` pra `.claude/commands/<skill>/`
+**4.** Perguntar sobre o Spy:
 
-Skills comuns (já estão em `.claude/commands/`, não precisa copiar):
-- `/iniciar`, `/syncar`, `/atualizar`, `/setup`
+> "Criei também a pasta do Spy de ofertas. Tem alguma subpasta que você quer adicionar aí pro seu processo?"
 
-### 4. Atualizar `_contexto/preferencias.md` (só se a pessoa pediu algo diferente)
+Aguardar. Criar o que ele pedir.
 
-Se respondeu algo na pergunta opcional que diverge do padrão: adicionar seção `## Preferências pessoais` no final.
-Se não pediu nada: não tocar no arquivo.
+**5.** Contextualizar o processo:
+
+> "Beleza. Quer me contextualizar como é o seu processo? Tem algum arquivo que você quer subir dentro das tuas pastas?"
+
+Aguardar. Se ele quiser subir arquivos, orientar onde colocar. Se quiser explicar o processo, ouvir e salvar em `_contexto/estrategia.md`.
+
+**6.** Copiar as skills do Luan (Operacional) de `templates/funcoes/mapa.md` pra `.claude/commands/`.
+
+**7.** Preencher `_contexto/estrategia.md` com o que foi dito.
+
+**8.** Encerrar:
+
+> "Pronto. Roda /iniciar no começo de cada nova conversa que eu já carrego teu contexto. Se quiser salvar alguma coisa no GitHub, /syncar."
 
 ---
 
-## Mensagem final
+### Outras pessoas reconhecidas (fluxo padrão com contexto)
 
-```
-[Nome], pronto.
+**1.** Confirmar a função e criar as pastas da estrutura definida em `pessoas.md`:
 
-Como [função], você tem:
-- /iniciar — carrega contexto da Swipe e do teu foco no começo da sessão
-- /syncar — salva no GitHub
-[lista das skills específicas copiadas]
+> "[Nome] — [confirmar o que a pessoa faz]. Criando as pastas pra você."
 
-Pastas criadas:
-[lista das pastas criadas, incluindo as de concorrentes se houver]
+**2.** Mostrar o que foi criado:
 
-Como usar: chama qualquer skill com / (ex: /email-profissional, /hook-battery).
-Roda /iniciar no começo de cada nova conversa.
-```
+> "Criei [lista das pastas]. Quer mudar alguma coisa?"
 
-Tom direto. Sem entusiasmo excessivo. Sem listas de instruções longas.
+Aguardar e ajustar.
+
+**3.** Usar a **"Pergunta de contexto"** definida em `pessoas.md`:
+
+> [pergunta específica da função]
+
+Aguardar.
+
+**4.** Perguntar sobre processo e arquivos:
+
+> "Quer me contextualizar como é o teu processo? Tem algum arquivo que você quer subir dentro das pastas?"
+
+Aguardar. Registrar em `_contexto/estrategia.md`.
+
+**5.** Copiar skills da função. Encerrar com:
+
+> "Pronto. /iniciar no começo de cada conversa, /syncar pra salvar no GitHub."
 
 ---
 
-## Regras
+## Fluxo genérico (pessoa não reconhecida)
 
-- Tom casual — conversa entre colegas, não onboarding corporativo
-- Se reconheceu a pessoa, NÃO pedir a função de novo — confirmar e seguir
-- Se a função for desconhecida, pedir e mapear pro mapa de funções
-- Não criar pastas extras (projetos/, clientes/, etc.)
-- Gerar tudo de uma vez no final — não ir arquivo por arquivo durante as perguntas
-- Máximo 3-4 perguntas no total
+**1.** Perguntar a função:
+
+> "[Nome] — qual é a sua função na Swipe? Pode ser: Sócio, CEO, CRM, Dados, Onboarding, Pesquisa/Social, Operacional, Vendas/CS ou Head de Ops."
+
+**2.** Criar as pastas do perfil mais próximo baseado na função informada.
+
+**3.** Mostrar o que foi criado, perguntar se quer mudar.
+
+**4.** Perguntar o foco da semana.
+
+**5.** Perguntar sobre processo e arquivos.
+
+**6.** Copiar skills da função. Encerrar.
+
+---
+
+## Regras gerais
+
+- Tom de colega, não assistente. Nada de "posso?", "deseja que eu?", "gostaria de?"
+- Criar as pastas antes de perguntar — mostrar o resultado, não pedir aprovação prévia
+- Uma pergunta por vez — não listar tudo de uma vez
+- Não criar pastas que a pessoa não pediu além da estrutura base
+- Gerar `_contexto/estrategia.md` sempre ao final com o que foi dito
+- Skills comuns já estão em `.claude/commands/` (iniciar, syncar, atualizar, setup) — não recopiar
