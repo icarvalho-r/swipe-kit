@@ -50,9 +50,9 @@ Buscar o nome em `templates/time/pessoas.md` (nome e apelidos).
 
 ### Luan
 
-**1.** Responder de forma casual, já sinalizando que vai criar as pastas:
+**1.** Sinalizar o que vai fazer antes de criar:
 
-> "Ah, Luan. Você tá tocando o High Ticket né. Deixa eu criar as pastas pra você."
+> "Boa, Luan. Sei que você tá tocando o High Ticket e também algumas partes do Spy de ofertas do produto principal. Vou criar algumas pastas pra você, tudo bem?"
 
 **2.** Criar silenciosamente toda a estrutura:
 ```
@@ -69,29 +69,33 @@ spy/
 
 **3.** Mostrar o que foi criado e abrir pra ajuste:
 
-> "Criei as pastas do High Ticket: Jeremy, Bluehackers, Full Sales System e Thiago Reis, mais referências e scripts. Tem alguma coisa que você quer mudar?"
+> "Criei as pastas do High Ticket pros concorrentes que já tenho mapeados: Jeremy, Bluehackers, Full Sales System e Thiago Reis, mais referências e scripts. Tem alguma coisa que você quer mudar ou alguma pasta que quer adicionar?"
 
-Aguardar. Ajustar se ele pedir (adicionar/renomear/remover pasta).
+Aguardar. Ajustar se ele pedir.
 
-**4.** Perguntar sobre o Spy:
+**4.** Spy de ofertas:
 
-> "Criei também a pasta do Spy de ofertas. Tem alguma subpasta que você quer adicionar aí pro seu processo?"
+> "Criei também uma pasta pro Spy de ofertas. Tem alguma subpasta que você quer adicionar que já faz parte do seu processo? Se quiser, pode me contextualizar como é o seu processo de spy que eu já crio um plano aqui pra você."
 
-Aguardar. Criar o que ele pedir.
+Aguardar. Se ele contextualizar o processo, registrar em `_contexto/estrategia.md` e criar as subpastas que fizer sentido.
 
-**5.** Contextualizar o processo:
+**5.** Copiar as skills do Luan (Operacional) de `templates/funcoes/mapa.md` pra `.claude/commands/`.
 
-> "Beleza. Quer me contextualizar como é o seu processo? Tem algum arquivo que você quer subir dentro das tuas pastas?"
+**6.** Preencher `_contexto/estrategia.md` com tudo que foi dito.
 
-Aguardar. Se ele quiser subir arquivos, orientar onde colocar. Se quiser explicar o processo, ouvir e salvar em `_contexto/estrategia.md`.
+**7.** Encerrar e abrir pra uso:
 
-**6.** Copiar as skills do Luan (Operacional) de `templates/funcoes/mapa.md` pra `.claude/commands/`.
+> "Pronto. /iniciar que eu já carrego seu contexto numa nova conversa.
+>
+> Tem alguma coisa que você quer contextualizar melhor do que você faz ou tá fazendo agora? Por exemplo: analisar uma VSL ou página de concorrente, montar um board no Miro, criar uma análise de oferta, comparar criativos. Posso te mostrar como funciona passo a passo."
 
-**7.** Preencher `_contexto/estrategia.md` com o que foi dito.
+Aguardar. Se ele quiser explorar alguma dessas opções, demonstrar.
 
-**8.** Encerrar:
+**8.** Oferecer contexto da Swipe (opcional, só se ele perguntar ou demonstrar interesse):
 
-> "Pronto. Roda /iniciar no começo de cada nova conversa que eu já carrego teu contexto. Se quiser salvar alguma coisa no GitHub, /syncar."
+> "Quer que eu te passe um resumo do contexto do High Ticket da Swipe? O que tá sendo construído, qual o objetivo, onde você entra nisso."
+
+Se sim, ler `_contexto/empresa.md` e resumir o que é relevante pro papel do Luan no High Ticket.
 
 ---
 
