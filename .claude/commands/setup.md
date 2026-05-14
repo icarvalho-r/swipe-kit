@@ -45,15 +45,14 @@ Ler `templates/time/pessoas.md` e tentar identificar a pessoa pelo nome ou apeli
 
 **Se reconheceu:**
 
-Confirmar diretamente com tom casual — sem perguntar de novo:
+Verificar se a pessoa tem **"Fluxo do setup"** definido em `templates/time/pessoas.md`. Se tiver, seguir aquele fluxo — ele tem instruções específicas de tom, ordem e o que criar antes de falar.
 
-> "Luan — você é o Operacional né. Sei que você tá tocando o High Ticket agora.
-> Qual é o seu foco principal na próxima semana?"
+Se não tiver fluxo específico: criar as pastas da estrutura, mostrar o que foi criado e perguntar o foco da semana de forma casual.
 
-Adaptar a fala ao contexto da pessoa conforme o `templates/time/pessoas.md`:
-- Se a pessoa tem um campo **"Pergunta de contexto"** definido, usar exatamente aquela pergunta
-- Caso contrário, mencionar o projeto ativo mais relevante pra função e perguntar sobre o foco atual
-- Tom: conversa entre colegas, não onboarding corporativo
+**Exemplo para Luan** (tem fluxo definido — criar tudo primeiro, mostrar depois):
+> "Luan. Organizei aqui o teu workspace — criei as pastas do High Ticket pra Jeremy, Bluehackers, Full Sales System e Thiago Reis, mais referências e scripts. E no Spy já tem a pasta de ofertas-black. Quer mudar alguma coisa ou tá bom assim?"
+
+Tom: colega mostrando o setup pronto, não assistente pedindo permissão. Nada de "posso criar?", "deseja que eu?", "gostaria de?"
 
 **Se não reconheceu (nome desconhecido):**
 

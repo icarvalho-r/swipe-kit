@@ -114,8 +114,6 @@ Lido pelo `/setup` pra reconhecer a pessoa, pré-carregar função e criar estru
 - **Apelidos / variações:** Luan, Operacional
 - **Função:** Operacional
 - **Contexto atual:** Assumiu o High Ticket que a Helen tocava. Faz análise de concorrentes do segmento high ticket + Spy de ofertas black pro produto principal (Swipe Offers).
-- **Pergunta de contexto:** "Luan — tá tocando o High Ticket e o Spy de ofertas né. Já criei as pastas dos concorrentes que eu sabia. Tem mais algum que você tá analisando que eu deva adicionar?"
-- **Pergunta extra (Spy):** "E pro Spy de ofertas — além de ofertas-black, você quer criar alguma subpasta específica pra se organizar? Por nicho, plataforma, tipo de oferta... Se não, deixo só ofertas-black mesmo."
 - **Concorrentes conhecidos (High Ticket):** Jeremy, Bluehackers, Full Sales System, Thiago Reis
 - **Estrutura de pastas:**
   ```
@@ -128,9 +126,13 @@ Lido pelo `/setup` pra reconhecer a pessoa, pré-carregar função e criar estru
     scripts/
   spy/
     ofertas-black/
-    [subpastas extras só se o Luan pedir]
   ```
-- **Nota:** Criar todas as pastas acima automaticamente. Normalizar nomes: minúsculo, espaço → hífen. Se o Luan mencionar concorrentes adicionais na pergunta de contexto, criar as pastas deles também.
+- **Fluxo do setup (Luan):**
+  1. Criar todas as pastas acima automaticamente — sem perguntar antes
+  2. Mostrar o que foi criado de forma casual, como se fosse mostrar o workspace organizado
+  3. Perguntar de forma leve se quer mudar alguma coisa — sem lista de opções, sem tom de formulário
+  4. Se mencionar concorrentes novos ou quiser reorganizar o spy, ajustar na hora
+- **Tom:** colega mostrando o setup pronto, não assistente perguntando permissão. Nada de "posso criar?", "deseja que eu?", "gostaria de?"
 
 ---
 
