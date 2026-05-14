@@ -1,149 +1,158 @@
 ---
 name: setup
 description: >
-  Configura o Swipe Kit pra função da pessoa no time. Pergunta nome, função e
-  preferências básicas, e gera _contexto/estrategia.md personalizado + copia as
-  skills certas pra .claude/commands/. Use quando rodar /setup pela primeira vez.
+  Configura o Swipe Kit pra função da pessoa no time. Reconhece a pessoa pelo nome,
+  confirma função, pergunta sobre o contexto atual e copia as skills certas.
+  Usar quando rodar /setup pela primeira vez.
 ---
 
 # /setup — Configuração do Swipe Kit
 
+## Antes de começar — ler o contexto
+
+Antes de qualquer mensagem, ler:
+
+1. `_contexto/empresa.md` — o que é a Swipe, produtos, time, projetos ativos
+2. `templates/time/pessoas.md` — quem é quem no time, apelidos, função e contexto atual de cada pessoa
+3. `templates/funcoes/mapa.md` — quais skills correspondem a cada função
+
+Com isso carregado, o Claude já sabe: o que é o High Ticket, quem é o Luan, o que a Thais faz, o que tá ativo em cada frente. Usar esse contexto naturalmente nas perguntas — sem precisar explicar o que é a Swipe pra pessoa.
+
+---
+
 ## Verificação inicial
 
-Antes de qualquer coisa, verifique se `_contexto/estrategia.md` já tem conteúdo personalizado (não só o template).
+Checar se `_contexto/estrategia.md` já tem conteúdo real (sem `<!-- NOT CONFIGURED -->`).
 
-- Se **não tem ou está vazio**: rode o onboarding abaixo
-- Se **já tem conteúdo**: avisar que o setup já foi feito e perguntar se quer refazer ou atualizar
+- Se **já tem conteúdo personalizado**: avisar que o setup já foi feito e perguntar se quer refazer.
+- Se **não tem ou está vazio**: rodar o onboarding abaixo.
 
 ---
 
 ## Onboarding
 
-Comece com uma mensagem curta:
+### Passo 1 — Pedir o nome
 
-> "Boa. Vou te fazer 3-4 perguntas pra configurar o Claude pra sua função na Swipe. Em 2 minutos tá pronto."
+> "Oi. Qual é o seu nome?"
 
-Fazer as perguntas em sequência, uma por vez, em conversa natural.
-
-### Pergunta 1
-"Qual é o seu nome?"
-
-### Pergunta 2
-"Qual sua função na Swipe?"
-
-Listar as opções de forma natural:
-
-> "Pode ser uma dessas:
-> - Sócio (Trevizan)
-> - CEO (Caique)
-> - CRM (Thais)
-> - Dados / Activation (Guibson)
-> - Onboarding (Henrique T)
-> - Pesquisa e Social (Bruna)
-> - Operacional (Helen, Luan)
-> - Vendas / CS Proativo (Luanna)
-> - Head de Operações (Isabella)
->
-> Qual a sua?"
-
-Aceitar variações ("CRM", "tô no CRM", "sou a Thais") e mapear pra função do `templates/funcoes/mapa.md`.
-
-### Pergunta 3
-"Qual é o seu foco principal agora? O que você tá tentando fazer ou resolver nos próximos 30 dias?"
-
-(Pode ser "reduzir falha de pagamento", "fechar mais Debrief", "documentar onboarding", "lançar campanha X" — qualquer coisa que esteja na cabeça)
-
-### Pergunta 4 (opcional)
-"Tem alguma preferência de tom ou coisa que te incomoda em texto de IA? Se não tiver, eu sigo o tom padrão da Swipe."
-
-(Se a pessoa disser "tudo bem o padrão", manter o `_contexto/preferencias.md` como está)
+Aguardar a resposta.
 
 ---
 
-## Processamento
+### Passo 2 — Reconhecer a pessoa
 
-Com as respostas:
+Ler `templates/time/pessoas.md` e tentar identificar a pessoa pelo nome ou apelido informado.
 
-### 1. Ler `templates/funcoes/mapa.md`
+**Se reconheceu:**
 
-Pra saber quais skills correspondem à função da pessoa.
+Confirmar diretamente com tom casual — sem perguntar de novo:
 
-### 2. Copiar skills da função pra `.claude/commands/`
+> "Luan — você é o Operacional né. Sei que você tá tocando o High Ticket agora.
+> Qual é o seu foco principal nos próximos 30 dias?"
 
-Pra cada skill listada no mapa pra essa função:
+Adaptar a fala ao contexto da pessoa conforme o `templates/time/pessoas.md`:
+- Mencionar o projeto ativo mais relevante pra função dela (ex: para Thais → dunning; para Bruna → conteúdo/ICP; para Luanna → CS Proativo)
+- Tom: conversa entre colegas, não onboarding corporativo
 
-- Skills de arquivo (ex: `analisar-dados`) → copiar `templates/skills/<skill>.md` pra `.claude/commands/<skill>.md`
-- Skills de pasta simples (ex: `hormozi`) → copiar `templates/skills/<skill>/` pra `.claude/commands/<skill>/`
-- Skills RMBC marcadas com `(rmbc)` → copiar `templates/skills/rmbc/<skill>/` pra `.claude/commands/<skill>/`
+**Se não reconheceu (nome desconhecido):**
 
-Mostrar os comandos disponíveis ao final.
+> "[Nome] — qual é a sua função na Swipe?"
 
-Skills comuns que TODA função recebe (já estão em `.claude/commands/`):
-- `/iniciar`
-- `/syncar`
-- `/atualizar`
+Listar as opções de forma natural:
 
-(Não precisa copiar — já vieram com o kit)
+> "Pode ser: Sócio, CEO, CRM, Dados, Onboarding, Pesquisa/Social, Operacional, Vendas/CS ou Head de Ops."
 
-### 3. Preencher `_contexto/estrategia.md`
+---
 
-Substituir o conteúdo placeholder por:
+### Passo 3 — Pergunta de contexto
+
+Pedir o foco atual com uma pergunta específica, não genérica.
+
+Se a função for conhecida, contextualizar:
+
+- **Operacional (Luan):** "Tá no High Ticket ou tem outra coisa na frente agora?"
+- **CRM (Thais):** "Tá focada no dunning ainda ou entrou coisa nova?"
+- **Pesquisa/Social (Bruna):** "Conteúdo, pesquisa de ICP ou os dois?"
+- **Onboarding (Henrique T):** "O onboarding tá em implementação ou ainda em refinamento?"
+- **Vendas/CS (Luanna):** "Tá no CS proativo ou tem campanha nova rodando?"
+- **Dados (Guibson):** "Instrumentação ainda ou já entrou análise de cohort?"
+- **Sócio/CEO:** "Qual a prioridade que tá consumindo mais energia agora?"
+- **Head de Ops (Isabella):** "Qual frente tá mais quente essa semana?"
+- **Função desconhecida:** "Qual é o seu foco principal agora?"
+
+Aguardar a resposta.
+
+---
+
+### Passo 4 (opcional) — Preferências
+
+> "Tem alguma preferência de tom ou coisa que te incomoda em texto de IA? Se não tiver, sigo o padrão da Swipe."
+
+Se disser "tudo bem" ou não tiver preferência específica: manter `_contexto/preferencias.md` como está, sem modificar.
+
+---
+
+## Processamento — gerar os arquivos
+
+### 1. Preencher `_contexto/estrategia.md`
 
 ```markdown
 # Foco Atual — [Nome]
 
 ## Função na Swipe
-[Função respondida]
+[Função]
 
 ## Foco principal agora
-[Resposta da pergunta 3]
+[Resposta da pergunta de contexto]
 
 ## O que pode esperar
-[Inferir do contexto da função e do foco — ex: "Tarefas relacionadas a [área]. Não priorizar [coisas fora do escopo]"]
+[Inferir do contexto e função — ex: "Tarefas relacionadas a high ticket, espionagem e operação"]
 
 ---
 *Atualize esse arquivo quando seu foco mudar.*
 ```
 
-### 4. Atualizar `_contexto/preferencias.md` (se a pessoa pediu)
+### 2. Copiar skills da função pra `.claude/commands/`
 
-Se a pessoa respondeu algo na pergunta 4 que diverge do padrão Swipe, adicionar uma seção `## Preferências pessoais` no final do arquivo (sem reescrever o resto).
+Ler `templates/funcoes/mapa.md` e copiar as skills da função:
 
-Se respondeu "tudo bem o padrão", não mexer.
+- Skills de arquivo `.md` → copiar `templates/skills/<skill>.md` pra `.claude/commands/<skill>.md`
+- Skills de pasta → copiar `templates/skills/<skill>/` pra `.claude/commands/<skill>/`
+- Skills RMBC `(rmbc)` → copiar `templates/skills/rmbc/<skill>/` pra `.claude/commands/<skill>/`
 
-### 5. Pular o que já tá pronto
+Skills comuns (já estão em `.claude/commands/`, não precisa copiar):
+- `/iniciar`, `/syncar`, `/atualizar`, `/setup`
 
-NÃO refazer:
-- `_contexto/empresa.md` (já vem com o contexto Swipe completo)
-- `marca/design-guide.md` (já vem com a identidade Swipe)
-- `CLAUDE.md` raiz (já tá configurado)
+### 3. Atualizar `_contexto/preferencias.md` (só se a pessoa pediu algo diferente)
+
+Se respondeu algo na pergunta opcional que diverge do padrão: adicionar seção `## Preferências pessoais` no final.
+Se não pediu nada: não tocar no arquivo.
 
 ---
 
 ## Mensagem final
 
-> "[Nome], teu setup tá pronto.
->
-> Como [função], você agora tem essas skills:
-> - `/iniciar` — carrega contexto da Swipe e do teu foco no começo da sessão
-> - `/syncar` — salva no GitHub
-> - [lista das skills específicas da função]
->
-> **Como começar:**
-> 1. Roda `/iniciar` no começo de cada nova conversa pra carregar o contexto
-> 2. Chama qualquer skill com `/` (ex: `/email-profissional`)
-> 3. Se aparecer algo que parece repetível e não tem skill, eu sugiro criar
->
-> **Pra salvar teu trabalho:** roda `/syncar` quando quiser fazer backup no GitHub.
->
-> Bora trabalhar."
+```
+[Nome], pronto.
+
+Como [função], você tem:
+- /iniciar — carrega contexto da Swipe e do teu foco no começo da sessão
+- /syncar — salva no GitHub
+[lista das skills específicas copiadas]
+
+Como usar: chama qualquer skill com / (ex: /email-profissional, /hook-battery).
+Roda /iniciar no começo de cada nova conversa.
+```
+
+Tom direto. Sem entusiasmo excessivo. Sem listas de instruções longas.
 
 ---
 
 ## Regras
 
-- Tom direto, sem excesso de entusiasmo
-- Não listar todas as perguntas de uma vez — uma por vez, em conversa
-- Se a função não bater com nenhuma do mapa, perguntar de novo dando as opções
-- Não criar pastas extras (clientes/, projetos/, etc) — o kit é enxuto
-- Gerar tudo de uma vez no final, não arquivo por arquivo durante as perguntas
+- Tom casual — conversa entre colegas, não onboarding corporativo
+- Se reconheceu a pessoa, NÃO pedir a função de novo — confirmar e seguir
+- Se a função for desconhecida, pedir e mapear pro mapa de funções
+- Não criar pastas extras (projetos/, clientes/, etc.)
+- Gerar tudo de uma vez no final — não ir arquivo por arquivo durante as perguntas
+- Máximo 3-4 perguntas no total
