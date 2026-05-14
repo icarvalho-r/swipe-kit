@@ -114,19 +114,23 @@ Lido pelo `/setup` pra reconhecer a pessoa, pré-carregar função e criar estru
 - **Apelidos / variações:** Luan, Operacional
 - **Função:** Operacional
 - **Contexto atual:** Assumiu o High Ticket que a Helen tocava. Faz análise de concorrentes do segmento high ticket + Spy de ofertas black pro produto principal (Swipe Offers).
-- **Pergunta de contexto:** "Luan — quais concorrentes você tá analisando no High Ticket agora? Você ainda tá na S4? Me passa os nomes que eu já crio uma pasta pra cada."
-- **Pergunta extra (Spy):** "E pro Spy de ofertas — você quer criar alguma pasta específica pra se organizar? Pode ser por nicho, plataforma ou tipo de oferta. Se preferir deixar tudo junto por enquanto, tudo bem também."
+- **Pergunta de contexto:** "Luan — tá tocando o High Ticket e o Spy de ofertas né. Já criei as pastas dos concorrentes que eu sabia. Tem mais algum que você tá analisando que eu deva adicionar?"
+- **Pergunta extra (Spy):** "E pro Spy de ofertas — além de ofertas-black, você quer criar alguma subpasta específica pra se organizar? Por nicho, plataforma, tipo de oferta... Se não, deixo só ofertas-black mesmo."
+- **Concorrentes conhecidos (High Ticket):** Jeremy, Bluehackers, Full Sales System, Thiago Reis
 - **Estrutura de pastas:**
   ```
   high-ticket/
-    [uma pasta por concorrente informado, ex: s4/, concorrente-x/]
+    jeremy/
+    bluehackers/
+    full-sales-system/
+    thiago-reis/
     referencias/
     scripts/
   spy/
     ofertas-black/
-    [pastas adicionais se o Luan quiser organizar por nicho/plataforma]
+    [subpastas extras só se o Luan pedir]
   ```
-- **Nota:** Criar as pastas de concorrentes com os nomes exatos que o Luan informar (minúsculo, espaço → hífen). Se não informar nenhum, criar `high-ticket/concorrente-1/` como placeholder. Pra spy, só criar subpastas extras se ele pedir — senão deixar só `ofertas-black/`.
+- **Nota:** Criar todas as pastas acima automaticamente. Normalizar nomes: minúsculo, espaço → hífen. Se o Luan mencionar concorrentes adicionais na pergunta de contexto, criar as pastas deles também.
 
 ---
 
