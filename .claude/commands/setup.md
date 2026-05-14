@@ -90,7 +90,7 @@ Aguardar. Se ele contextualizar o processo, registrar em `_contexto/estrategia.m
 Se sim: mostrar em três blocos:
 
 **Bloco 1 — Pastas do workspace:**
-Listar todas as pastas criadas no workspace (incluindo as de concorrentes dentro de high-ticket/, spy/, e qualquer outra gerada pelo setup).
+Listar todas as pastas do workspace: as criadas pelo setup pra função da pessoa (high-ticket/, spy/ e subpastas) mais as pastas base do kit (_contexto/ — contexto da Swipe e das suas prioridades, dados/ — arquivos de entrada como prints e PDFs, marca/ — identidade visual da Swipe).
 
 **Bloco 2 — Skills ativas:**
 Listar as skills em `.claude/commands/` (exceto setup, iniciar, syncar, atualizar) com uma linha descrevendo o que cada uma faz. Não listar os atalhos.
