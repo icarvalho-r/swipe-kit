@@ -81,6 +81,12 @@ Aguardar. Se ele contextualizar o processo, registrar em `_contexto/estrategia.m
 
 **5.** Copiar as skills do Luan (Operacional) de `templates/funcoes/mapa.md` pra `.claude/commands/`.
 
+Instruir a instalar o find-skills:
+
+> "Roda esse comando no terminal pra instalar o find-skills:
+>
+> `npx skills add https://github.com/vercel-labs/skills --skill find-skills`"
+
 **6.** Preencher `_contexto/estrategia.md` com tudo que foi dito.
 
 **7.** Oferecer resumo de skills e pastas:
