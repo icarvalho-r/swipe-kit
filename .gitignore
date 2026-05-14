@@ -1,0 +1,28 @@
+# Variáveis de ambiente (API keys, tokens — NUNCA commitar)
+.env
+.env.local
+.env.*
+
+# Arquivo gerado pelo /setup com MCPs específicos
+_configurar-mcps.md
+
+# Outputs binários
+*.png
+
+# Arquivos pessoais (cada pessoa do time tem o seu)
+dados/*.csv
+dados/*.xlsx
+dados/*.xls
+dados/*.txt
+dados/*.pdf
+dados/*.json
+!dados/README.md
+
+# Pastas geradas pelo /setup (conteúdo pessoal de cada membro)
+tarefas.md
+notas/
+projetos/
+
+# Sistema
+.DS_Store
+node_modules/
