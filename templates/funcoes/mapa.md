@@ -21,6 +21,9 @@ Decisões estratégicas, visão de produto, reports executivos, negociações co
 - `email-profissional`
 - `proposta-comercial`
 - `slide`
+- `hormozi` — frameworks de oferta e posicionamento
+- `funnel-architecture` (rmbc)
+- `pricing-strategy` (rmbc)
 
 ---
 
@@ -33,17 +36,25 @@ Liderança, métricas, comunicação com time e externos, decks de pitch.
 - `email-profissional`
 - `slide`
 - `roteiro-post`
+- `hormozi`
+- `lander-copy` (rmbc)
+- `funnel-audit` (rmbc)
 
 ---
 
 ### CRM (Thais)
 
-Email, jornadas, dunning, automações de retenção, comunicação por failure de pagamento.
+Email, jornadas, dunning, automações de retenção, comunicação por falha de pagamento.
 
 **Skills:**
 - `email-profissional`
 - `roteiro-post`
 - `analisar-dados`
+- `email-promo` (rmbc)
+- `reengagement-sequence` (rmbc)
+- `cart-abandonment-flow` (rmbc)
+- `welcome-sequence` (rmbc)
+- `broadcast-email` (rmbc)
 
 ---
 
@@ -55,6 +66,8 @@ Instrumentação, dashboards, activation points, análise quantitativa.
 - `analisar-dados`
 - `publicar-site`
 - `slide`
+- `funnel-audit` (rmbc)
+- `competitor-offer-analysis` (rmbc)
 
 ---
 
@@ -66,6 +79,9 @@ Onboarding em grupo, apresentações de boas-vindas, jornada início do cliente.
 - `email-profissional`
 - `slide`
 - `roteiro-post`
+- `welcome-sequence` (rmbc)
+- `soap-opera-sequence` (rmbc)
+- `hormozi`
 
 ---
 
@@ -77,18 +93,28 @@ Conteúdo pra Instagram, TikTok, pesquisa com base, entrevistas com clientes.
 - `carrossel`
 - `roteiro-post`
 - `analisar-dados`
+- `copy-decoder`
+- `meta-ads-criativos`
+- `hook-battery` (rmbc)
+- `fb-ad-copy` (rmbc)
+- `ugc-brief` (rmbc)
+- `ad-angle-generator` (rmbc)
 
 ---
 
 ### Operacional (Helen, Luan)
 
-Operação geral, processos, espionagem, suporte interno, conteúdo operacional.
+Operação geral, processos, espionagem de concorrentes, suporte interno.
 
 **Skills:**
 - `email-profissional`
 - `proposta-comercial`
 - `carrossel`
 - `roteiro-post`
+- `copy-decoder`
+- `pesquisa-concorrentes` (rmbc)
+- `competitor-offer-analysis` (rmbc)
+- `niche-scout`
 
 ---
 
@@ -100,6 +126,11 @@ Outreach, CS proativo, retenção ativa, follow-up de clientes em risco (Frente 
 - `email-profissional`
 - `roteiro-post`
 - `analisar-dados`
+- `email-promo` (rmbc)
+- `reengagement-sequence` (rmbc)
+- `soap-opera-sequence` (rmbc)
+- `upsell-script` (rmbc)
+- `hormozi`
 
 ---
 
@@ -107,11 +138,35 @@ Outreach, CS proativo, retenção ativa, follow-up de clientes em risco (Frente 
 
 Tudo. Sem filtro de função.
 
-**Skills:**
+**Skills principais:**
 - `analisar-dados`
 - `carrossel`
+- `copy-decoder`
 - `email-profissional`
+- `hormozi`
+- `meta-ads-criativos`
+- `niche-scout`
 - `proposta-comercial`
 - `publicar-site`
 - `roteiro-post`
 - `slide`
+- `frontend-design`
+- `ui-ux-pro-max`
+- `derick-vsl`
+- `gold-finder`
+- `perpetuo-white`
+- `squad-creator-pro`
+
+**RMBC (via `templates/skills/rmbc/`):**
+- `email-promo`, `welcome-sequence`, `reengagement-sequence`, `cart-abandonment-flow`
+- `fb-ad-copy`, `hook-battery`, `lander-copy`, `vsl-script`, `copy-rewrite`
+- `ad-angle-generator`, `funnel-architecture`, `funnel-audit`, `competitor-offer-analysis`
+- `pesquisa-concorrentes` e demais
+
+---
+
+## Nota sobre skills RMBC
+
+Skills com sufixo `(rmbc)` ficam em `templates/skills/rmbc/`. O `/setup` copia de lá pra `.claude/commands/` no mesmo fluxo das demais.
+
+Para acessar todas as skills RMBC disponíveis, usar `/write-copy` (lista completa) ou chamar diretamente (ex: `/hook-battery`).

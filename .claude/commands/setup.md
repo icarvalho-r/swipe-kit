@@ -71,8 +71,12 @@ Pra saber quais skills correspondem à função da pessoa.
 ### 2. Copiar skills da função pra `.claude/commands/`
 
 Pra cada skill listada no mapa pra essa função:
-- Copiar `templates/skills/<skill>.md` pra `.claude/commands/<skill>.md`
-- Confirmar a cópia mostrando os comandos disponíveis ao final
+
+- Skills de arquivo (ex: `analisar-dados`) → copiar `templates/skills/<skill>.md` pra `.claude/commands/<skill>.md`
+- Skills de pasta simples (ex: `hormozi`) → copiar `templates/skills/<skill>/` pra `.claude/commands/<skill>/`
+- Skills RMBC marcadas com `(rmbc)` → copiar `templates/skills/rmbc/<skill>/` pra `.claude/commands/<skill>/`
+
+Mostrar os comandos disponíveis ao final.
 
 Skills comuns que TODA função recebe (já estão em `.claude/commands/`):
 - `/iniciar`
